@@ -1,0 +1,191 @@
+/* FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Orbitron', sans-serif;
+    background-color: #111;
+    background-image: url('../img/fundo-textura-metal.jpg'); /* textura metálica real */
+    background-size: cover;
+    background-repeat: repeat;
+    color: #fff;
+}
+
+/* CONTAINER GERAL */
+#total {
+    width: 95%;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(255, 102, 0, 0.3);
+    overflow: hidden;
+    padding-bottom: 30px;
+}
+
+/* TOPO */
+#topo {
+    background: linear-gradient(to right, #2e2e2e, #1c1c1c);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #ff6600;
+}
+
+#topo img {
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+#txtlogo {
+    font-size: 32px;
+    color: #ff6600;
+    text-shadow: 0 0 10px #ff6600, 0 0 20px #ff6600;
+}
+
+/* CONTAINER DOS CARROS */
+#container {
+    padding: 30px 20px;
+    text-align: center;
+}
+
+#container h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #ff6600;
+    text-shadow: 0 0 8px #ff6600;
+}
+
+/* GRID DOS CARROS */
+#carros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+#carros img {
+    width: 100%;
+    max-width: 220px;
+    height: 150px; /* altura fixa */
+    object-fit: cover; /* corta o que passar e mantém proporção */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.1);
+    cursor: pointer;
+    background-color: #00000030;
+}
+
+
+#carros img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 25px rgba(255, 102, 0, 0.8);
+    filter: brightness(1.2);
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+    #carros {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #carros {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #txtlogo {
+        font-size: 24px;
+    }
+
+    #container h1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    #carros {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* GRID */
+#carros {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+/* CARD DO CARRO */
+.carro {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    box-shadow: 0 0 10px rgba(255, 102, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 220px;
+}
+
+.carro:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.6);
+}
+
+/* IMAGEM */
+.carro img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+/* Ajustes na ficha técnica */
+.carro .info {
+    padding: 10px;
+    font-size: 14px;
+    color: #fff;
+    text-align: left;
+}
+
+.carro .info p {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.carro .info strong {
+    color: #ff6600;
+}
+
+/* Botão Selecionar */
+.btn-selecionar {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    margin: 10px auto 0;
+    display: block;
+    border-radius: 6px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-selecionar:hover {
+    background-color: #ff8533;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 102, 0, 0.8);
+}
+
+

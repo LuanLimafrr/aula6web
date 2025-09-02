@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Carro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        /* ... seu CSS existente ... */
+        body {
+            background: url('img/fundo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+            color: #ff6600;
+            text-shadow: 2px 2px 10px #000;
+        }
+
+        .carro-img {
+            max-width: 600px;
+            width: 90%;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            margin-bottom: 30px;
+        }
+
+        .ficha {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            font-size: 18px;
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.6);
+            margin-bottom: 30px;
+        }
+
+        .ficha p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .ficha strong {
+            color: #ff6600;
+        }
+
+        /* Botão voltar */
+        .btn-voltar {
+            background-color: #ff6600;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #fff;
+            box-shadow: 0 0 10px #ff6600;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-voltar:hover {
+            background-color: #e65c00;
+            box-shadow: 0 0 20px #ff6600;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo-carro">Carregando...</h1>
+
+    <img class="carro-img" id="imagem-carro" src="img/" alt="Carro selecionado">
+
+    <div class="ficha">
+        <p><strong>📝 Nome:</strong> <span id="nome"></span></p>
+        <p><strong>⚙️ Cv:</strong> <span id="cv"></span></p>
+        <p><strong>🚀 Top Speed:</strong> <span id="topSpeed"></span></p>
+        <p><strong>🏭 Montadora:</strong> <span id="montadora"></span></p>
+        <p><strong>📅 Ano:</strong> <span id="ano"></span></p>
+    </div>
+
+    <button class="btn-voltar" onclick="history.back()">← Voltar</button>
+
+    <script>
+        const carro = JSON.parse(localStorage.getItem("carroSelecionado"));
+
+        if (carro) {
+            document.getElementById("titulo-carro").textContent = carro.nome.toUpperCase();
+            document.getElementById("imagem-carro").src = carro.imagem;
+            document.getElementById("imagem-carro").alt = carro.nome;
+            document.getElementById("nome").textContent = carro.nome;
+            document.getElementById("cv").textContent = carro.cv;
+            document.getElementById("topSpeed").textContent = carro.topSpeed;
+            document.getElementById("montadora").textContent = carro.montadora;
+            document.getElementById("ano").textContent = carro.ano;
+        } else {
+            document.getElementById("titulo-carro").textContent = "Nenhum carro selecionado.";
+        }
+    </script>
+    
+</body>
+</html>
